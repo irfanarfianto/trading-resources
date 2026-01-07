@@ -3,29 +3,40 @@
 
 @import "{{ site.theme }}";
 
-/* GITBOOK STYLE THEME - EMERALD EDITION */
+/* STANDALONE GITBOOK STYLE THEME - DARK MODE */
 
 :root {
-  /* Colors */
-  --primary: #059669;       /* Emerald 600 */
-  --primary-light: #d1fae5; /* Emerald 100 */
-  --text-main: #1f2937;     /* Gray 800 */
-  --text-muted: #6b7280;    /* Gray 500 */
-  --bg-body: #ffffff;
-  --bg-sidebar: #f9fafb;    /* Gray 50 */
-  --border: #e5e7eb;        /* Gray 200 */
-  --hover: #f3f4f6;         /* Gray 100 */
+  /* Dark Color System (Slate) */
+  --bg-body: #0f172a;       /* Slate 900 */
+  --bg-sidebar: #1e293b;    /* Slate 800 */
+  --bg-card: #1e293b;       /* Slate 800 */
+  --bg-hover: #334155;      /* Slate 700 */
+  
+  --text-main: #e2e8f0;     /* Slate 200 */
+  --text-muted: #94a3b8;    /* Slate 400 */
+  --text-highlight: #f8fafc; /* Slate 50 */
+  
+  --primary: #34d399;       /* Emerald 400 (bighter for dark mode) */
+  --primary-dim: rgba(52, 211, 153, 0.1); 
+  
+  --border: #334155;        /* Slate 700 */
   
   /* Dimensions */
   --sidebar-width: 280px;
   --header-height: 60px;
 }
 
+/* RESET & BASE */
 * { box-sizing: border-box; }
 
-body {
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--text-main);
   background: var(--bg-body);
   line-height: 1.6;
@@ -35,36 +46,40 @@ body {
 .gitbook-wrapper {
   display: flex;
   min-height: 100vh;
+  position: relative;
 }
 
 /* SIDEBAR STYLING */
 .gitbook-sidebar {
   width: var(--sidebar-width);
-  background: var(--bg-sidebar);
-  border-right: 1px solid var(--border);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   overflow-y: auto;
   z-index: 100;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
 }
 
 .sidebar-header {
-  height: var(--header-height);
+  min-height: var(--header-height);
   display: flex;
   align-items: center;
   padding: 0 1.5rem;
   border-bottom: 1px solid var(--border);
-  background: white;
+  background: var(--bg-sidebar); /* Dark bg */
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .sidebar-logo {
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--text-main);
+  color: var(--text-highlight);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -90,8 +105,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
-  font-weight: 600;
-  margin-top: 1rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
 }
 
 .nav-header:first-child { margin-top: 0; }
@@ -99,81 +114,103 @@ body {
 .nav-item {
   display: block;
   padding: 0.5rem 1.5rem;
-  color: var(--text-main);
+  color: var(--text-muted); /* Muted by default */
   text-decoration: none;
   font-size: 0.95rem;
   border-left: 3px solid transparent;
+  transition: all 0.2s;
 }
 
 .nav-item:hover {
-  background: var(--hover);
-  color: var(--primary);
+  background: var(--bg-hover);
+  color: var(--text-highlight);
 }
 
 .nav-item.active {
-  background: white;
+  background: var(--primary-dim);
   color: var(--primary);
   border-left-color: var(--primary);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* MAIN CONTENT AREA */
 .gitbook-content {
   flex: 1;
-  margin-left: var(--sidebar-width); /* Push content right */
-  min-width: 0; /* Prevent overflow */
+  margin-left: var(--sidebar-width);
+  min-width: 0;
   display: flex;
   flex-direction: column;
+  background: var(--bg-body); /* Dark bg */
 }
 
 .mobile-header {
-  display: none; /* Hide on desktop */
+  display: none;
   height: var(--header-height);
   align-items: center;
   padding: 0 1.5rem;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  background: white;
+  background: var(--bg-sidebar);
   z-index: 90;
+}
+
+.project-name { 
+    color: var(--text-highlight);
+    font-weight: 700;
 }
 
 .page-content {
   flex: 1;
-  max-width: 800px; /* Reading width */
+  max-width: 800px;
   margin: 0 auto;
   padding: 3rem 2rem;
   width: 100%;
 }
 
-/* CONTENT TYPOGRAPHY */
-h1 { font-size: 2.25rem; font-weight: 800; margin-top: 0; margin-bottom: 1.5rem; letter-spacing: -0.025em; }
-h2 { font-size: 1.75rem; font-weight: 700; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-h3 { font-size: 1.4rem; font-weight: 600; margin-top: 2rem; }
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-highlight);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
 
-p { margin-bottom: 1.25rem; color: #374151; }
+h1 { font-size: 2.25rem; font-weight: 800; margin-top: 0; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+h2 { font-size: 1.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+h3 { font-size: 1.5rem; }
 
-a { color: var(--primary); text-decoration: none; font-weight: 500; }
+p { margin-bottom: 1.25rem; color: var(--text-main); }
+
+ul, ol {
+  padding-left: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+li { margin-bottom: 0.5rem; }
+
+a { color: var(--primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+/* COMPONENTS */
 blockquote {
   border-left: 4px solid var(--primary);
-  background: var(--primary-light);
+  background: rgba(52, 211, 153, 0.1); /* Dark transparent emerald */
   margin: 1.5rem 0;
   padding: 1rem 1.5rem;
   border-radius: 0 8px 8px 0;
-  color: #064e3b;
+  color: var(--text-main);
 }
 
-/* Code Blocks */
+/* Code Blocks - Dark Theme */
 pre {
-  background: #1f2937;
-  color: #f9fafb;
+  background: #020617; /* Very Dark Slate */
+  color: #f8fafc;
   padding: 1.25rem;
   border-radius: 8px;
+  border: 1px solid var(--border);
   overflow-x: auto;
-  line-height: 1.5;
-  font-size: 0.9rem;
   margin: 1.5rem 0;
 }
 
@@ -181,20 +218,36 @@ code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
+/* Inline Code */
 p code, li code {
-  background: #f3f4f6;
+  background: var(--bg-hover);
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-size: 0.85em;
-  color: #111827;
+  color: #fb7185; /* Rose color for inline code contrast */
+  font-weight: 500;
 }
 
-/* Tables */
+/* Syntax Highlighting Overrides */
+.highlight {
+  background: #020617;
+  color: #f8fafc;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border: none;
+}
+
+/* Tables - Dark Theme */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
-  font-size: 0.9rem;
+  display: block;
+  overflow-x: auto;
 }
 
 th, td {
@@ -203,14 +256,30 @@ th, td {
   text-align: left;
 }
 
-th { background: #f9fafb; font-weight: 600; }
-
-/* Warning Box */
-h2:contains("TRADING RULES"), h2:contains("WARNING") {
-  color: #dc2626;
+th { 
+    background: var(--bg-sidebar); 
+    font-weight: 600; 
+    color: var(--text-highlight);
 }
 
-/* Footer */
+hr {
+  height: 1px;
+  background: var(--border);
+  border: none;
+  margin: 2rem 0;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  border: 1px solid var(--border);
+}
+
+/* UTILITY */
+h2:contains("RULES"), h2:contains("WARNING") { color: #f87171; /* Lighter red for dark mode */ }
+
+/* FOOTER */
 .page-footer {
   margin-top: 4rem;
   padding: 2rem;
@@ -220,11 +289,11 @@ h2:contains("TRADING RULES"), h2:contains("WARNING") {
   text-align: center;
 }
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .gitbook-sidebar {
-    display: none; /* Hide sidebar initially on mobile (would need JS for toggle) */
-    /* For this simple implementation, we show it at bottom or hide */
+    transform: translateX(-100%);
+    transition: transform 0.3s;
   }
   
   .gitbook-content {
@@ -233,13 +302,11 @@ h2:contains("TRADING RULES"), h2:contains("WARNING") {
   
   .mobile-header {
     display: flex;
-    justify-content: center;
-    background: #f9fafb;
+    justify-content: space-between;
   }
   
   .project-name { font-weight: 700; color: var(--text-main); }
   
   .page-content { padding: 1.5rem; }
-  
   /* Simple mobile nav via quick links at top of home */
 }
