@@ -1,11 +1,9 @@
 ---
 ---
 
-/* 
- * Custom Styling for Trading Resources
- * Base theme (Cayman) is loaded via _config.yml
- * This file extends the base theme with custom styles
- */
+@import "{{ site.theme }}";
+
+/* Custom Styling for Trading Resources */
 
 /* Header Navigation */
 .header-links {
