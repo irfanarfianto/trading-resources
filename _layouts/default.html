@@ -7,36 +7,31 @@
 
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
   </head>
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
+    <a id="skip-to-content" href="#content" style="display:none">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-      
-      <div class="header-links">
-        <a href="{{ site.baseurl }}/" class="btn">🏠 Home</a>
-        <a href="{{ site.baseurl }}/TRADING-RULES" class="btn">⚠️ Trading Rules</a>
-        <a href="{{ site.baseurl }}/QUICK-REFERENCE" class="btn">📝 Quick Reference</a>
-        <a href="{{ site.baseurl }}/trading-education/" class="btn">🎓 Learn</a>
+      <div class="header-content">
+        <div class="project-title">
+          <h1 class="project-name">{{ page.title | default: site.title | default: "Trading Resources" }}</h1>
+        </div>
+        
+        <nav class="header-links">
+          <a href="{{ site.baseurl }}/" class="btn">🏠 Home</a>
+          <a href="{{ site.baseurl }}/TRADING-RULES" class="btn">⚠️ Rules</a>
+          <a href="{{ site.baseurl }}/QUICK-REFERENCE" class="btn">📝 Quick Ref</a>
+          <a href="{{ site.baseurl }}/trading-education/" class="btn">🎓 Learn</a>
+        </nav>
       </div>
-      
-      {% if site.github.is_project_page %}
-        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-      {% endif %}
     </header>
 
     <main id="content" class="main-content" role="main">
       {{ content }}
 
       <footer class="site-footer">
-        <p>📈 Trading Resources Hub - Built for Indonesian Day Traders</p>
-        <p><small>Remember: "The goal is to preserve capital and be consistent over time." 🚀</small></p>
-        {% if site.github.is_project_page %}
-          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-        {% endif %}
+        <p>📈 <strong>Trading Resources Hub</strong> &mdash; Built for Indonesian Day Traders</p>
+        <p style="color: var(--text-light); font-size: 0.8rem">"The goal is to preserve capital and be consistent over time."</p>
       </footer>
     </main>
   </body>
