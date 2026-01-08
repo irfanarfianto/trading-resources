@@ -126,9 +126,66 @@ Analisis aliran dana asing dan broker lokal besar.
 
 ---
 
-### 💡 Recommendation for Day Trading:
-Gunakan screener berikut setiap pagi (09:00 - 09:30):
-1.  **High Volume Breakout** (Cari ledakan volume)
-2.  **Frequency Spike** (Cari aktivitas tersembunyi)
-3.  **Prices Breakout MA 10/20** (Cari momentum awal)
-4.  **Foreign Flow Uptrend** (Ikuti asing)
+# 🎯 Strategy & Schedule (Kitab Trading)
+
+Kategorisasi Screener sesuai gaya trading + Jadwal Trading. Pilih gaya trading yang sesuai dengan kepribadian Anda.
+
+## 1. ⚡ TIPE: SCALPER (COPET)
+- **Gaya**: Hit and Run. Tidak peduli tren jangka panjang. Cari cuan 1-2 tick, volume meledak, volatilitas tinggi.
+- **Slogan**: *"Buka market, hajar kanan, cuan bungkus."*
+
+### 📂 PAKAI SCREENER INI:
+1.  **👓 Bandarmology > Frequency Spike** (Wajib! Cari yang tiba-tiba ramai order).
+2.  **📊 Technical > High Volume Breakout** (Cari bensin).
+3.  **🔥 Popular > Most Shareholder Increase** (Hati-hati, ini cari keramaian ritel buat nebeng ombak sesaat).
+
+### ⏰ RUMUS JAM SCALPING:
+**09:00 - 09:30 (THE WAR ZONE) ⚔️**
+Ini adalah waktu terbaik! Volatilitas tertinggi. Masuk cepat, keluar cepat.
+
+---
+
+## 2. 📅 TIPE: DAY TRADER (HARIAN)
+- **Gaya**: Ride the Trend. Beli pagi/siang, jual sore. Cari saham uptrend, fundamental/bandar oke.
+
+### 📂 PAKAI SCREENER INI:
+1.  **📊 Technical > Prices Breakout MA 10 Today** (Cari awal tren harian).
+2.  **📊 Technical > Rebound on Bullish Trend** (Strategi "Buy on Dip" terbaik).
+3.  **👓 Bandarmology > Bandar Accumulation Uptrend** (Pastikan ada Bandar yang jaga harga).
+4.  **👓 Bandarmology > Foreign Flow Uptrend** (Asing akumulasi = harga stabil naik).
+
+### ⏰ RUMUS JAM DAY TRADE:
+- **09:15 - 09:45 (KONFIRMASI)**: Scanning & Entry. Cari saham yang tren-nya sudah terbentuk jelas.
+- **10:00 - 11:00 (DISKON)**: Entry kedua (Buy on Dip) jika tadi ketinggalan. Cari yang koreksi sehat.
+- **14:30 - 14:49 (PANEN)**: Waktu jualan. Jangan hold overnight kalau bukan niat swing.
+
+---
+
+## 3. 🛌 TIPE: SWING TRADER (SANTAI)
+- **Gaya**: Beli simpan 1 minggu - 1 bulan. Cari saham murah atau turnaround.
+
+### 📂 PAKAI SCREENER INI:
+1.  **🧙‍♂️ Guru > Tiny Titans** (Saham kecil potensial meledak).
+2.  **🧙‍♂️ Guru > Price Momentum** (Cari yang kinerja 6 bulan bagus).
+3.  **💎 Valuation > Low PBV / Cheap Mid Caps** (Cari barang murah meriah).
+4.  **📄 Fundamental > Turnaround** (Saham bangkit dari kubur).
+5.  **📊 Technical > Trend Following** (Follow the trend sampai patah).
+6.  **🕒 Dividend > Dividend Stock** (Bonus dividen sambil nunggu harga naik).
+
+### ⏰ RUMUS JAM SWING:
+**14:30 - 14:50 (PRE-CLOSING)**
+Waktu terbaik analisa & entry Swing.
+**Kenapa:** Kita bisa lihat Closing Price. Kalau closing kuat/bagus, kita beli sore itu untuk disimpan besok/lusa ("Buy on Close"). Santai, tidak perlu pantau market seharian.
+
+---
+
+## 📝 CHEAT SHEET JADWAL (Rangkuman)
+
+| JAM (WIB) | COCOK UNTUK | SCREENER PRIORITAS | STRATEGI |
+|:---:|:---:|---|---|
+| **09:00 - 09:15** | ✨ **SCALPER** | Frequency Spike | Haka saham yang ramai. Jual 2 tick. |
+| **09:15 - 09:45** | 📅 **DAY TRADER** | Breakout MA10 | Cari tren yang valid. Entry awal. |
+| **10:00 - 11:00** | 📅 **DAY TRADER** | Rebound Bullish | Cari saham uptrend yang lagi merah (diskon). |
+| **11:00 - 13:30** | 💤 **ISTIRAHAT** | ❌ **OFF** | **Jangan entry.** Volume kering. Rawan false signal. |
+| **13:35 - 14:00** | 📅 **DAY TRADER** | Bandar Accum | Entry sesi 2 jika ada tarikan baru. |
+| **14:30 - 14:50** | 🛌 **SWING** | Valuation/Trend | Beli saham bagus untuk simpan. Jual saham day trade. |
